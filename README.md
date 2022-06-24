@@ -27,6 +27,6 @@ Including:
 
 # Contact:
 If you face any error or you have any query please feel free to contact with me
-Name: Arslan Jameel
-Software Engineer (Mobile Developer)
-Email: arslanch585@gmail.com
+# Name: Arslan Jameel
+# Software Engineer (Mobile Developer)
+# Email: arslanch585@gmail.com
