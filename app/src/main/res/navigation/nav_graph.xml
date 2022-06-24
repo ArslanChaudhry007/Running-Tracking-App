@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/setupFragment">
+
+    <action
+        android:id="@+id/action_global_trackingFragment"
+        app:destination="@+id/trackingFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="com.androiddevs.runningappyt.fragments.RunFragment"
+        android:label="RunFragment">
+        <action
+            android:id="@+id/action_runFragment_to_trackingFragment"
+            app:destination="@id/trackingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.androiddevs.runningappyt.fragments.StatisticsFragment"
+        android:label="StatisticsFragment" />
+
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.androiddevs.runningappyt.fragments.TrackingFragment"
+        android:label="TrackingFragment">
+        <action
+            android:id="@+id/action_trackingFragment_to_runFragment"
+            app:destination="@id/runFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="com.androiddevs.runningappyt.fragments.SetupFragment"
+        android:label="SetupFragment">
+        <action
+            android:id="@+id/action_setupFragment_to_runFragment"
+            app:destination="@id/runFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.androiddevs.runningappyt.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+
+</navigation>
