@@ -3,8 +3,11 @@ package com.androiddevs.runningappyt.viewModel
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.androiddevs.runningappyt.repository.MainRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class StatisticsViewModel @ViewModelInject constructor(
+@HiltViewModel
+class StatisticsViewModel @Inject constructor(
     val mainRepository: MainRepository
 ) : ViewModel() {
 

@@ -7,9 +7,13 @@ import androidx.lifecycle.viewModelScope
 import com.androiddevs.runningappyt.db.Run
 import com.androiddevs.runningappyt.others.SortType
 import com.androiddevs.runningappyt.repository.MainRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel @ViewModelInject constructor(
+
+@HiltViewModel
+class MainViewModel @Inject constructor(
     val mainRepository: MainRepository
 ) : ViewModel() {
 
