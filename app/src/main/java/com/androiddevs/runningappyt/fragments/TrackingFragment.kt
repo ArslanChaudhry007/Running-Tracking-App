@@ -3,6 +3,7 @@ package com.androiddevs.runningappyt.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -177,20 +178,26 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     }
 
     private fun zoomToSeeWholeTrack() {
-        val bounds = LatLngBounds.Builder()
-        for (polyline in pathPoints) {
-            for (pos in polyline) {
-                bounds.include(pos)
+        try {
+            val bounds = LatLngBounds.Builder()
+            for (polyline in pathPoints) {
+                for (pos in polyline) {
+                    bounds.include(pos)
+                }
             }
-        }
-        map?.moveCamera(
-            CameraUpdateFactory.newLatLngBounds(
-                bounds.build(),
-                mapView.width,
-                mapView.height,
-                (mapView.height * 0.05f).toInt()
+            map?.moveCamera(
+                CameraUpdateFactory.newLatLngBounds(
+                    bounds.build(),
+                    mapView.width,
+                    mapView.height,
+                    (mapView.height * 0.05f).toInt()
+                )
             )
-        )
+
+        } catch (e:Exception){
+            Toast.makeText(context,"Zero Distance covered", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun endRunAndSaveToDb() {
